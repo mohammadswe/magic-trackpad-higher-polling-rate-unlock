@@ -1,0 +1,52 @@
+{
+  "SPDisplaysDataType" : [
+    {
+      "_name" : "Apple M4",
+      "spdisplays_mtlgpufamilysupport" : "spdisplays_metal4",
+      "spdisplays_ndrvs" : [
+        {
+          "_name" : "3:2 Display",
+          "_spdisplays_display-product-id" : "2a79",
+          "_spdisplays_display-serial-number" : "373dedeb",
+          "_spdisplays_display-vendor-id" : "896",
+          "_spdisplays_display-week" : "0",
+          "_spdisplays_display-year" : "0",
+          "_spdisplays_displayID" : "b",
+          "_spdisplays_pixels" : "4320 x 2880",
+          "_spdisplays_resolution" : "2160 x 1440 @ 120.00Hz",
+          "spdisplays_main" : "spdisplays_yes",
+          "spdisplays_mirror" : "spdisplays_on",
+          "spdisplays_mirror_status" : "spdisplays_master_mirror",
+          "spdisplays_online" : "spdisplays_yes",
+          "spdisplays_pixelresolution" : "4320 x 2880",
+          "spdisplays_resolution" : "2160 x 1440 @ 120.00Hz",
+          "spdisplays_rotation" : "spdisplays_supported"
+        },
+        {
+          "_name" : "Studio Display",
+          "_spdisplays_display-product-id" : "ae3a",
+          "_spdisplays_display-serial-number" : "c67e0d74",
+          "_spdisplays_display-vendor-id" : "610",
+          "_spdisplays_display-week" : "7",
+          "_spdisplays_display-year" : "2022",
+          "_spdisplays_displayID" : "2",
+          "_spdisplays_pixels" : "4320 x 2880",
+          "_spdisplays_resolution" : "2160 x 1440 @ 60.00Hz",
+          "spdisplays_ambient_brightness" : "spdisplays_yes",
+          "spdisplays_display_type" : "spdisplays_retinaLCD",
+          "spdisplays_display-fw-version" : "Version 17.0 (Build 21A329)",
+          "spdisplays_display-serial-number" : "GQR9KPMXWG",
+          "spdisplays_mirror" : "spdisplays_on",
+          "spdisplays_mirror_status" : "spdisplays_hardware_mirror",
+          "spdisplays_online" : "spdisplays_yes",
+          "spdisplays_pixelresolution" : "spdisplays_5120x2880Retina2"
+        }
+      ],
+      "spdisplays_vendor" : "sppci_vendor_Apple",
+      "sppci_bus" : "spdisplays_builtin",
+      "sppci_cores" : "10",
+      "sppci_device_type" : "spdisplays_gpu",
+      "sppci_model" : "Apple M4"
+    }
+  ]
+}
