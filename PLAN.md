@@ -189,7 +189,47 @@ Supports subcommands: `enable`, `disable`, `status`, `test`.
 
 ---
 
-### Component C: One-Click Clickable Apps (`apps/`)
+### Component C: Native macOS Notification Architecture
+
+Instead of attempting fragile, SIP-restricted private bezel APIs (`OSDUIHelper`), the app uses macOS's native **Notification Center banners (top-right)** with sound cues and app branding.
+
+#### 1. Why Native Top-Right Notifications?
+* **Zero SIP Conflicts:** Runs safely in user space across macOS Monterey, Ventura, Sonoma, and Sequoia without throwing `"You don't have permission to use OSDUIHelper"` errors.
+* **App Bundle Icon Branding:** When called from within the compiled `.app` bundle, notifications automatically inherit the app's custom `applet.icns` icon rather than a generic Script Editor icon.
+* **Persistent History:** Notifications log into macOS Notification Center so users can review the switch status even if they stepped away from their desk.
+
+#### 2. Notification States & Exact Syntax
+
+| State | Title | Subtitle | Message Content | Sound Cue |
+| :--- | :--- | :--- | :--- | :--- |
+| **Unlock Active** | `Magic Trackpad Polling` | `120Hz Mirror Active` | `Hardware polling unlocked to ~90–125Hz. Opening Test UFO...` | `Glass` |
+| **Restore Native** | `Magic Trackpad Polling` | `Native 60Hz Restored` | `Disconnected virtual dummy. Screen returned to native hardware.` | `default` |
+| **Already 120Hz** | `Magic Trackpad Polling` | `Already Operating at 120Hz+` | `Display is already high-refresh. Trackpad polling is already unlocked.` | `Blow` |
+| **Error / Required** | `Magic Trackpad Polling` | `Action Required` | `BetterDisplay installation or permissions needed. Check dialog.` | `Basso` |
+
+#### 3. AppleScript / Shell Implementation Helper
+
+```bash
+send_notification() {
+  local title="$1"
+  local subtitle="$2"
+  local message="$3"
+  local sound="${4:-default}"
+
+  osascript -e "display notification \"$message\" with title \"$title\" subtitle \"$subtitle\" sound name \"$sound\""
+}
+
+# Example: Success invocation
+send_notification \
+  "Magic Trackpad Polling" \
+  "120Hz Mirror Active" \
+  "Hardware polling unlocked to ~90–125Hz. Opening Test UFO..." \
+  "Glass"
+```
+
+---
+
+### Component D: One-Click Clickable Apps (`apps/`)
 
 Compile two lightweight AppleScript applets via `osacompile`:
 
@@ -238,7 +278,8 @@ Compile two lightweight AppleScript applets via `osacompile`:
 - [ ] **Phase 3: AppleScript Applet Bundles**
   - Generate and sign `Unlock Magic Trackpad Polling.app` and `Restore Native 60Hz Display.app` using `osacompile`.
   - Add icons to `Contents/Resources/applet.icns`.
-- [ ] **Phase 4: Verification & Test UFO Bridge**
+- [ ] **Phase 4: Native Notifications & Test UFO Verification**
+  - Implement native macOS Notification Center banners with app icons, custom titles, subtitles, and system sound cues (`Glass`, `default`, `Blow`, `Basso`).
   - Verify seamless browser popup to `https://testufo.com/mouserate` on completion.
 - [ ] **Phase 5: Public Documentation**
   - Write high-converting, tech-nerd-friendly `README.md` with benchmark instructions and clear diagrams.
