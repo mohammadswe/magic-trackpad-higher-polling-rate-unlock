@@ -152,6 +152,10 @@ def compute_aspect_ratio(width, height):
     if (rw, rh) == (4, 3):
         return 4, 3, "4:3"
 
+    # 5:4
+    if (rw, rh) == (5, 4):
+        return 5, 4, "5:4"
+
     # MacBook Pro notched screen ratio (~1.54) -> maps logically to 16:10
     if 1.50 <= ratio <= 1.62:
         return 16, 10, "16:10"

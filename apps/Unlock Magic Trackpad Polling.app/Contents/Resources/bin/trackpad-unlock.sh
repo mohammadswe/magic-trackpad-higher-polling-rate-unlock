@@ -22,9 +22,21 @@ readonly EXIT_NO_TRACKPAD_DETECTED=9
 
 # App Constants
 readonly DUMMY_NAME="Trackpad 120Hz Dummy"
-readonly BD_APP="/Applications/BetterDisplay.app"
-readonly BD_CLI="${BD_APP}/Contents/MacOS/BetterDisplay"
 readonly TEST_UFO_URL="https://testufo.com/mouserate"
+
+# Generalize BetterDisplay location (/Applications or ~/Applications)
+find_betterdisplay_app() {
+  if [ -d "/Applications/BetterDisplay.app" ]; then
+    echo "/Applications/BetterDisplay.app"
+  elif [ -d "${HOME}/Applications/BetterDisplay.app" ]; then
+    echo "${HOME}/Applications/BetterDisplay.app"
+  else
+    echo "/Applications/BetterDisplay.app"
+  fi
+}
+
+BD_APP="$(find_betterdisplay_app)"
+BD_CLI="${BD_APP}/Contents/MacOS/BetterDisplay"
 
 # Determine script & engine directory
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -77,6 +89,9 @@ PYTHON_BIN="$(locate_python)"
 
 # Check if BetterDisplay is installed, prompt if GUI
 check_betterdisplay_installed() {
+  BD_APP="$(find_betterdisplay_app)"
+  BD_CLI="${BD_APP}/Contents/MacOS/BetterDisplay"
+
   if [ -x "$BD_CLI" ]; then
     return 0
   fi
@@ -452,7 +467,7 @@ print(json.dumps(res, indent=2))
   fi
 
   if [ "$tp_detected" != "true" ]; then
-    exit "$EXIT_NO_TRACKPAD_DETECTED"
+    log_verbose "Magic Trackpad not detected in ioreg at enable time; continuing since 120Hz mirror is active."
   fi
 
   exit "$EXIT_SUCCESS"
