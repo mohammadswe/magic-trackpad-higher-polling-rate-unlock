@@ -1,12 +1,12 @@
 # Unlock Higher Polling Rate On Your Magic Trackpad
 
-Double your Apple Magic Trackpad report rate from **60Hz to ~90–125Hz** on any 60Hz Mac display.
+Double your Apple Magic Trackpad report rate from **60Hz to ~120Hz** on any 60Hz Mac display.
 
 Enjoy visibly smoother cursor tracking, half the input lag, and a more responsive desktop—with one click.
 
 ---
 
-## ⚡️ How It Works (In Plain English)
+## How It Works
 
 * **Your Trackpad is already fast:** The Magic Trackpad hardware actually tracks your fingers at **125Hz** (sending touch updates every 8ms).
 * **The macOS Bottleneck:** When connected to a 60Hz monitor (like an Apple Studio Display, an external 4K/1440p monitor, or a MacBook Air), macOS slows down cursor updates to match the screen's 60Hz rate. Half of your touch packets get discarded.
