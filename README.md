@@ -19,7 +19,7 @@ Enjoy visibly smoother cursor tracking, half the input lag, and a more responsiv
 ### 📋 Requirements
 
 * **[BetterDisplay](https://betterdisplay.pro)**: Used behind the scenes to create the virtual screen. The free version is fine for this utility. If you don't have it installed, the app will ask if you'd like to install it automatically via Homebrew (`brew install --cask betterdisplay`) or download it free from their website.
-* **Magic Trackpad and/or Magic Mouse: Not tested with other devices that limit polling rate based on display refresh rate, but it will most likely work!
+* **Magic Trackpad and/or Magic Mouse**: Not tested with other devices that limit polling rate based on display refresh rate, but it will most likely work!
 
 
 ### 1. One-Click Apps
