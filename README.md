@@ -22,7 +22,7 @@ Enjoy visibly smoother cursor tracking, half the input lag, and a more responsiv
 * **Magic Trackpad and/or Magic Mouse**: Not tested with other devices that limit polling rate based on display refresh rate, but it will most likely work!
 
 
-### 1. One-Click Apps
+### 1. One-Click Start
 Inside the `apps/` folder, you'll find two ready-to-use apps:
 * **`Unlock Magic Trackpad Polling.app`** — Turns on the 120Hz unlock. You'll hear a chime, get a notification, and [TestUFO](https://testufo.com/mouserate) will open in your browser so you can test it live.
 * **`Restore Native 60Hz Display.app`** — Turns off the virtual screen and returns your display back to pure native 60Hz.
