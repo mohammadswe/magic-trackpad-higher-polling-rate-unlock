@@ -16,6 +16,8 @@ Enjoy visibly smoother cursor tracking, half the input lag, and a more responsiv
 
 ## 🚀 How to Use
 
+[Check your current polling rate at](https://testufo.com/mouserate)
+
 ### 1. One-Click Apps
 Inside the `apps/` folder, you'll find two ready-to-use apps:
 * **`Unlock Magic Trackpad Polling.app`** — Turns on the 120Hz unlock. You'll hear a chime, get a notification, and [TestUFO](https://testufo.com/mouserate) will open in your browser so you can test it live.
