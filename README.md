@@ -16,6 +16,12 @@ Enjoy visibly smoother cursor tracking, half the input lag, and a more responsiv
 
 ## 🚀 How to Use
 
+### 📋 Requirements
+
+* **[BetterDisplay](https://betterdisplay.pro)**: Used behind the scenes to create the virtual screen. The free version is fine for this utility. If you don't have it installed, the app will ask if you'd like to install it automatically via Homebrew (`brew install --cask betterdisplay`) or download it free from their website.
+* **Magic Trackpad and/or Magic Mouse: Not tested with other devices that limit polling rate based on display refresh rate, but it will most likely work!
+
+
 ### 1. One-Click Apps
 Inside the `apps/` folder, you'll find two ready-to-use apps:
 * **`Unlock Magic Trackpad Polling.app`** — Turns on the 120Hz unlock. You'll hear a chime, get a notification, and [TestUFO](https://testufo.com/mouserate) will open in your browser so you can test it live.
@@ -47,12 +53,6 @@ If you prefer using the command line:
 
 ---
 
-## 📋 Requirements & Notes
-
-* **macOS 13+** on Apple Silicon (M1/M2/M3/M4) or Intel.
-* **[BetterDisplay](https://betterdisplay.pro)**: Used behind the scenes to create the virtual screen. If you don't have it installed, the app will ask if you'd like to install it automatically via Homebrew (`brew install --cask betterdisplay`) or download it free from their website.
-* **Already on a 120Hz ProMotion display?** If your primary screen is already 120Hz (such as a 14" or 16" MacBook Pro screen or a 144Hz gaming monitor), the tool will detect it and let you know your trackpad is already running at full speed.
-* **Magic Mouse:** Also works with the Apple Magic Mouse!
 
 ---
 
